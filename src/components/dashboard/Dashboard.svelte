@@ -220,12 +220,7 @@
                   <!-- Actions -->
                   <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                     <div class="flex justify-end space-x-2">
-                      <button
-                        on:click={() => viewDocument(doc)}
-                        class="text-primary hover:text-primary-dark"
-                      >
-                        View
-                      </button>
+                      
                       <button
                         on:click={() => {
                           toggleDocumentSelection(doc.document_id);
