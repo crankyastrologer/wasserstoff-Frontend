@@ -16,8 +16,12 @@
     
     $: filteredDocuments = documents
   .filter(doc => {
-    const matchesText = doc.document_id.toLowerCase().includes(filterText.toLowerCase());
-    const matchesType = filterType === 'all' 
+    const matchesText = doc.filename.toLowerCase().includes(filterText.toLowerCase());
+    const matchesType = 
+      filterType === 'all' ||
+      (filterType === 'pdf' && doc.filename.toLowerCase().endsWith('.pdf')) ||
+      (filterType === 'image' && /\.(png|jpe?g|gif|bmp|webp)$/i.test(doc.filename.toLowerCase()));
+
     return matchesText && matchesType;
   })
   .sort((a, b) => {
@@ -25,9 +29,7 @@
       return sortOrder === 'asc' 
         ? a.filename.localeCompare(b.filename) 
         : b.filename.localeCompare(a.filename);
-    } 
-     else {
-      // Default: sort by name if sortBy is invalid or unsupported
+    } else {
       return sortOrder === 'asc'
         ? a.document_id.localeCompare(b.document_id)
         : b.document_id.localeCompare(a.document_id);
