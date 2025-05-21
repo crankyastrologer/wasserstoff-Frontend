@@ -29,7 +29,7 @@ export async function login(email: string, password: string): Promise<User> {
   formData.append('username', email);  // OAuth2PasswordRequestForm expects 'username' field, not 'email'
   formData.append('password', password);
 
-  const response = await fetch('http://localhost:8000/login', {
+  const response = await fetch('https://wasserstoff-aiinterntask-zlyc.onrender.com/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -68,7 +68,7 @@ export async function signup(name: string, password: string): Promise<User> {
   formData.append("username", name);
   formData.append("password", password);
 
-  const response = await fetch('http://localhost:8000/register/', {
+  const response = await fetch('https://wasserstoff-aiinterntask-zlyc.onrender.com/register/', {
     method: 'POST',
     body: formData
   });

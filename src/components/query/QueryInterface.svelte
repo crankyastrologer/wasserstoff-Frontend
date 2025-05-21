@@ -19,7 +19,7 @@
   try {
     const token = await localStorage.getItem('token');
 
-    const response = await fetch(`http://localhost:8000/query`, {
+    const response = await fetch(`https://wasserstoff-aiinterntask-zlyc.onrender.com/query`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -13,7 +13,7 @@ export async function fetchDocuments(): Promise<void> {
       throw new Error('No auth token found');
     }
 
-    const response = await fetch('http://localhost:8000/vectorstore/get_documents', {
+    const response = await fetch('https://wasserstoff-aiinterntask-zlyc.onrender.com/vectorstore/get_documents', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -44,7 +44,7 @@ export async function deleteDocument(id: string): Promise<void> {
   isLoading.set(true);
   try {
     const token = localStorage.getItem('token'); // Replace with your actual token store
-    const response = await fetch(`http://localhost:8000/vectorstore/delete_document?document_id=${encodeURIComponent(id)}`, {
+    const response = await fetch(`https://wasserstoff-aiinterntask-zlyc.onrender.com/vectorstore/delete_document?document_id=${encodeURIComponent(id)}`, {
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${token}`,

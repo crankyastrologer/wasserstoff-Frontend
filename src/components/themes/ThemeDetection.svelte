@@ -17,7 +17,7 @@
   try {
     const token = localStorage.getItem("token");
 
-    const response = await fetch("http://127.0.0.1:8000/get_themes", {
+    const response = await fetch("https://wasserstoff-aiinterntask-zlyc.onrender.com/get_themes", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

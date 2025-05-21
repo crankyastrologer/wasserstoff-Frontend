@@ -62,7 +62,7 @@
 
     const token = await localStorage.getItem('token'); // Your token retrieval method
 
-    const response = await fetch(`http://localhost:8000/uploadfiles/`, {
+    const response = await fetch(`https://wasserstoff-aiinterntask-zlyc.onrender.com/uploadfiles/`, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${token}`
